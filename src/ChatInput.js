@@ -23,6 +23,12 @@ const ChatInput = (props) => {
 
   const onMessageUpdate = (e) => {
     setMessage(e.target.value);
+    props.MessageStatus(user);
+  };
+
+  const typing = (e) => {
+    console.log(e.target.value);
+    //props.MessageStatus(user);
   };
 
   const joinGroup = (e) => {
@@ -38,21 +44,23 @@ const ChatInput = (props) => {
       <br />
       <label htmlFor="message">Message:</label>
       <br />
-      <input
-        type="text"
+      <textarea
+        type="textarea"
         id="message"
         name="message"
+        rows={5}
+        cols={50}
         value={message}
         onChange={onMessageUpdate}
       />
       <br />
-      <label htmlFor="group">Select a Group:</label>
+      <label htmlFor="group">Select an Order:</label>
       <br />
       <select onChange={joinGroup} name="group">
         <option>Select</option>
-        <option value="region_1">region_1</option>
-        <option value="region_2">region_2</option>
-        <option value="ee28cd33-ab34-48df-8180-1ec49b383ce9">Order_1</option>
+        <option value="ee28cd33-ab34-48df-8180-wew3224rfer">Order0</option>
+        <option value="ee28cd33-ab34-48df-8180-09jknsdsds">Order1</option>
+        <option value="ee28cd33-ab34-48df-8180-1ec49b383ce9">Order2</option>
       </select>
       <br />
       <br />
