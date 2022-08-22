@@ -14,8 +14,8 @@ const Chat = () => {
 
   useEffect(() => {
     const newConnection = new HubConnectionBuilder()
-      .withUrl("https://frythub-notification.herokuapp.com/hubs/chat")
-      //.withUrl("https://localhost:6001/hubs/chat")
+
+      .withUrl("https://localhost:6001/hubs/chat")
       .withAutomaticReconnect()
       .build();
 
